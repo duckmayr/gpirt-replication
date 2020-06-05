@@ -1,7 +1,11 @@
-##### Load required packages and custom functions -----
-library(mvtnorm)          ## For drawing from a multivariate normal for the GPs
-library(bggum)            ## For GGUM response probabilities
+##### Setup -----
+## Load required packages and 
+library(mvtnorm) ## For drawing from a multivariate normal for the GPs
+library(bggum)   ## For GGUM response probabilities
+## Source in custom functions and ensure needed directories exist
 source("code/covSEiso.R") ## For the squared exponential covariance function
+source("code/fix_directories.R") ## To conditionally make needed directories
+fix_directories()
 
 
 ##### Generate standard IRFs -----
