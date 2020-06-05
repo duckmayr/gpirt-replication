@@ -1,3 +1,9 @@
+# Ignore generated data and plots
+*.RData
+*.rds
+*.Rda
+*.pdf
+
 # History files
 .Rhistory
 .Rapp.history
