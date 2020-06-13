@@ -5,7 +5,7 @@
 #'     values of theta_grid. If not provided, can be constructed if beta is
 #'     not NULL (then 2PL IRFs are created)
 #' @param responses An integer vector of actual responses
-#' @param theta_estimate A numeric vector giving the GPIRT theta estimates
+#' @param theta_estimate A numeric vector giving the theta estimates
 #' @param beta (Optional). A numeric vector of 2PL item parameter estimates
 #' @param highlight (Optional). An integer vector of respondent indices to
 #'     highlight in the rug
