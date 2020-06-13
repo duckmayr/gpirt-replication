@@ -39,3 +39,31 @@ To reproduce all results presented in the paper, you must:
   - Run the R script "code/npi-application.R"
   - Run the R script "code/congress-application.R"
   - Run the R script "code/supplemental-results.R"
+
+In addition to R (versions 3.6.3 and 4.0.0 were used by the authors) and python (versions 3.8.2 and 3.8.3 were used by the authors), you will need:
+  - Sufficient tools to compile C++ code (g++ versions 9.3.0 and 10.1.0 were used by the authors)
+  - The python package "numpy" (version 1.18.2 was used by the authors)
+  - The python package "GPy" (version 1.9.9 was used by the authors)
+  - The R package "bggum" (version 1.0.2 was used by the authors)
+  - The R package "ltm" (version 1.1-1 was used by the authors)
+  - The R package "KernSmoothIRT" (version 6.4 was used by the authors)
+  - The R package "Rcpp" (version 1.0.4.6 was used by the authors)
+  - The R package "RcppArmadillo" (version 0.9.900.1.0 was used by the authors)
+  - The R package "devtools" (version 2.3.0 was used by the authors)
+  - The R package "mvtnorm" (version 1.1-0 was used by the authors)
+  - The R package "dplyr" (version 0.8.5 was used by the authors)
+  - The R package "tidyr" (version 1.0.3 was used by the authors)
+  - The R package "pROC" (version 1.16.2 was used by the authors)
+  - The R package "emIRT" (version 0.0.11 was used by the authors)
+
+Please note that additional R or python packages, or system dependencies, may be needed to satisfy the dependencies of the above listed packages directly relied on by the authors.
+To the extent that exact results may be affected by operating system differences, you may note the authors conducted analysis on Linux systems (Manjaro Linux and Ubuntu Linux).
+
+
+References
+
+Lewis, J. B., Poole, K., Rosenthal, H., Boche, A., Rudkin, A., and Sonnet, L. Voteview: Congressional roll-call votes database, 2020. URL: https://voteview.com/.
+
+Open-Source Psychometrics Project. Open psychology data: Raw data from online personality tests, 2012. URL: https://openpsychometrics.org/_rawdata/.
+
+Raskin, R. and Terry, H. A principal-components analysis of the narcissistic personality inventory and further evidence of its construct validity. Journal of Personality and Social Psychology, 54(5):890–902, 1988.
