@@ -40,7 +40,7 @@ chain <- gpirtMCMC(responses,
                    mean_function = "quadratic",
                    store_fstar = TRUE)
 ## Save raw results for further inspection if desired
-saveRDS(chain, file = "raw-output/H116-chain.rds")
+saveRDS(chain, file = "model-output/H116-chain.rds")
 
 
 ##### Estimate GPIRT quantities of interest -----

@@ -2,6 +2,9 @@
 ## Load required packages
 library(dplyr)
 library(tidyr)
+## If you do not have gpirt installed, you can do so via
+# library(devtools)
+# install_github("duckmayr/gpirt")
 library(gpirt)
 
 
@@ -50,7 +53,9 @@ responses <- full_responses[train_idx, ]
 ## Convert to response_matrix class and save to disk
 codes     <- list(yea = 1, nay = 0, missing = NA)
 responses <- as.response_matrix(x = responses, response_codes = codes)
-saveRDS(responses, file = "data/npi-responses.rds")
+saveRDS(responses, file = "data/npi-responses.rds") ## Use RDS for R analyses
+write.table(responses, file = "data/npi-responses.csv", row.names = FALSE,
+          col.names = FALSE, sep = ",") ## CSV for python
 ## Now we randomly take another 1,000 for the CAT experiment
 test_idx  <- sample(x = setdiff(1:nrow(full_responses), train_idx), size = 1000)
 responses <- full_responses[test_idx, ]

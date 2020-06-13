@@ -1,8 +1,10 @@
 # Ignore generated data and plots
+model-output/
 *.RData
 *.rds
 *.Rda
 *.pdf
+data/npi-responses.csv
 
 # History files
 .Rhistory
