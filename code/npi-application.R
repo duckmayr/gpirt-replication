@@ -1,7 +1,7 @@
 ##### Setup -----
 ## Install version of gpirt with linear mean function
-temp_lib <- tempdir()
-library(devtools)
+temp_lib <- tempdir() ## We install to a temporary library location to respect
+library(devtools)     ## any gpirt installation on the user's computer
 install_github("duckmayr/gpirt@e4586a1", lib = temp_lib)
 ## Load required packages
 library(gpirt, lib.loc = temp_lib) ## For GPIRT sampling
@@ -114,9 +114,9 @@ RMSEs
 ##### Held-out Experiment -----
 ## Rember to run code/gplvm.py *first*!
 ## We use python's GPy package for the GPLVM replicates,
-## so those results need to exist before we can read them into R and compare
+## so those results need to exist before we can read them into R and compare.
 ## Now let's run the replicates for the models we have in R,
-## GPIRT, kernel-smoothed IRT, and traditional 2PL IRT
+## GPIRT, kernel-smoothed IRT, and traditional 2PL IRT.
 ## Generate a seed for each replicate
 set.seed(123)
 seeds <- sample(x = 1:1e6, size = 20)
@@ -159,11 +159,11 @@ for ( iter in 1:20 ) {
     ltm_fit <- ltm(altered_responses2 ~ z1, IRT.param = TRUE)
     ## cat("Running kernel-smoothed IRT...\n")
     ksIRT_fit <- ksIRT(ks_altered_responses, 1, 1)
-    Ptmp <- subjOCC(ksIRT_fit, "MLTheta")
+    Ptmp <- subjOCC(ksIRT_fit, "MLTheta") ## Get prob of responses
     P <- matrix(NA_real_, nrow = nrow(ksIRTresponses), ncol = ncol(ksIRTresponses))
-    for ( j in 1:ncol(P) ) {
-        rnumber <- "if"(ksIRTresponses[1,j] == 1, 1, 2)
-        P[ , j] <- Ptmp[[j]][rnumber, ]
+    for ( j in 1:ncol(P) ) { ## Get prob of "1" response (ordered by unique(),
+        rnumber <- "if"(ksIRTresponses[1,j] == 1, 1, 2) ## not by option value)
+        P[ , j] <- Ptmp[[j]][rnumber, ] ## So that P now has "IRFs"
     }
     ## Load the GPLVM results and held out indices
     ## (the -1 and +1 things you'll see here account for python being 0-indexed

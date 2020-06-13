@@ -1,8 +1,8 @@
 ##### Setup -----
 ## Install version of gpirt with quadratic mean function
-temp_lib <- tempdir()
-library(devtools)
-install_github("duckmayr/gpirt@44a08da", lib = temp_lib)
+temp_lib <- tempdir() ## We install to a temporary library location to respect
+library(devtools)     ## any gpirt installation on the user's computer
+install_github("duckmayr/gpirt@44a08da", lib = temp_lib, upgrade = FALSE)
 ## Load required packages
 library(gpirt, lib.loc = temp_lib) ## For GPIRT sampling
 library(dplyr)                     ## For data wrangling
