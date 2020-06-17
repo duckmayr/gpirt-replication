@@ -11,7 +11,7 @@ seeds = [969167, 188942, 134058, 124022, 685285, 226318, 365209, 648795,
 
 print("Running GPLVM replicates")
 for iteration in range(20):
-    print("\tRunning replicate" + str(iteration)+1 + "\n")
+    print("\tRunning replicate " + str(iteration+1) + "\n")
     np.random.seed(seeds[iteration])
     altered_responses = np.copy(full_responses)
     remove_idx = np.random.choice(np.arange(altered_responses.size),
